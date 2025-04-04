@@ -1,3 +1,9 @@
+html
+{
+    font-size: 16px; 
+    /* html 폰트 크기 지정시 기본 rem 단위 수정가능*/
+}
+
 * {
     margin:0px;
     padding:0px;
@@ -27,4 +33,23 @@ img
     height: 100%;
     object-fit: cover;
     /* cover: 이미지가 짤릴지언정 꽉차게, contain: 여백이 생길지언정 꽉차게 */
+}
+
+/* 
+margin : 0px auto; 블록요소 자체를 가운데 배치
+text-align : center; 블록요소 안쪽의 인라인요소를 가운데 배치
+*/
+
+article
+{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin: 50px auto;
+    text-align: center;
+}
+
+article span
+{
+    font-size: 2rem;
 }

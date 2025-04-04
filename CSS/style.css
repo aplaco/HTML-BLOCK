@@ -32,8 +32,6 @@ font-family속서에 복수개 이상의 폰트를 적용
 - link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting최소화
 */
 
-@import "reset.css";
-
 body 
 {
     padding: 100px;
@@ -48,11 +46,12 @@ header h1
 {
     font-family: "orbitron";
     margin-bottom: 40px;
+    font-size: 3.5rem;
 }
 
 header nav a 
 {
-    font: 500 16px/1 "orbitron";
+    font: 500 1rem/1 "orbitron";
     letter-spacing: 1px;
     margin-right: 30px;
 }
@@ -65,7 +64,7 @@ main
 
 main h1 
 {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 main figure 
@@ -79,18 +78,16 @@ main figure
 main p 
 {
     width: 50%;
-    font-size: 16px;
     line-height: 1.5;
     margin-bottom: 30px;
     text-align: justify;
-    border: 1px solid red;
 }
 
 main a
 {
     background-color:black;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.7rem;
     color:white;
     width: 100px;
     height: 30px;
@@ -108,12 +105,12 @@ footer
 
 footer ul 
 {
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 footer p
 {
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 /* 
@@ -122,4 +119,9 @@ footer p
 -블록요소 안쪽에 있는 인라인 요소들이 정렬됨
 -left, center, right, justify 
 -justify는 단어사이의 간격을 조절해서 양쪽을 맞추는 방식
+*/
+
+/* rem 단위의 개념
+-웹에서 텍스트 크기 지정할때 주로 쓰이는 단어
+- 1rem = 16px
 */
