@@ -17,50 +17,97 @@ color: pink;
 font-family속서에 복수개 이상의 폰트를 적용
 첫번째 적용 불가시, 다음 폰트 적용
 
- */
+*/
 
-body {
+/*
+렌더링 동작 방식
+- html태그를 해석해서 DOM생성 (Document Object Model)
+- css를 해석해서 CSSDOM 생성
+- 위의 객체가 생성되기 전까지는 화면렌더링 블록됨
+
+구글 웹폰트를 <link>방식으로 연결하는게 좋은 이유
+- DOM생성시 서버에서 폰트를 사전에 미리 다운로드
+- 많은 웹폰트 연결로 인해 화면 렌더링 지연을 최소화 가능
+- layout shifting 방지 가능 (컨텐츠의 재구성으로 높이값이 어긋나 덜컹거리는 현상)
+- link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting최소화
+*/
+
+@import "reset.css";
+
+body 
+{
     padding: 100px;
 }
 
-margin-bottom: 40px;
+/*header*/
+header 
+{
+    margin-bottom: 80px;
+}
+header h1 
+{
+    font-family: "orbitron";
+    margin-bottom: 40px;
+}
 
-header nav a {
-    font: 16px/1 "orbitron";
+header nav a 
+{
+    font: 500 16px/1 "orbitron";
     margin-right: 30px;
 }
 
-header h1 {
-    font-weight: 600;
-    font-style: italic;
-    font-size: 40px;
-    font-family: Orbitron;
-    color :black;
+/* main */
+main 
+{
+    margin-bottom: 80px;
 }
 
-footer ul {
+main h1 
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+main figure 
+{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+main p 
+{
+    width: 50%;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-align: justify;
+    border: 1px solid red;
+}
+
+main a
+{
+    background-color:cornflowerblue;
+    font-weight: bold;
+    font-size: 12px;
+    color:white;
+    width: 100px;
+    height: 30px;
+    display: inline-block; /* 각 요소의 특징을 강제 변경 처리 block, inline, inline-block*/
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+}
+
+/* footer */
+footer ul 
+{
     font-size: 100px;
     color: aqua;
 }
 
-main p {
-    /* font-weight: bold;
-    font-style: italic;
-    font-size: 12px;
-    line-height: 2;
-    font-family: "arial", "돋움"; */
-    font: 16px/2, "arial", "돋움";
-}
-
-/*
-   렌더링 동작 방식
-   - html태그를 해석해서 DOM생성 (Document Object Model)
-   - css를 해석해서 CSSDOM 생성
-   - 위의 객체가 생성되기 전까지는 화면렌더링 블록됨
- 
-   구글 웹폰트를 <link>방식으로 연결하는게 좋은 이유
-   - DOM생성시 서버에서 폰트를 사전에 미리 다운로드
-   - 많은 웹폰트 연결로 인해 화면 렌더링 지연을 최소화 가능
-   - layout shifting 방지 가능 (컨텐츠의 재구성으로 높이값이 어긋나 덜컹거리는 현상)
-   - link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting최소화
- */
+/* 
+정렬 기능 (text-align) 
+-블록요소에 정렬기능 지정
+-블록요소 안쪽에 있는 인라인 요소들이 정렬됨
+-left, center, right, justify 
+-justify는 단어사이의 간격을 조절해서 양쪽을 맞추는 방식
+*/
