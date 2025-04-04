@@ -32,95 +32,129 @@ font-family속서에 복수개 이상의 폰트를 적용
 - link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting최소화
 */
 
-body 
-{
+body {
     padding: 100px;
-}
-
-/*header*/
-header 
-{
-    margin-bottom: 30px;
-}
-header h1 
-{
+    background-color: gray;
+  }
+  div {
+    width: 600px;
+    background-color: white;
+    padding: 50px;
+    margin: 0px auto;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /*header*/
+  header {
+    margin-bottom: 20px;
+  }
+  header h1 {
     font-family: "orbitron";
-    margin-bottom: 40px;
-    font-size: 3.5rem;
-}
-
-header nav a 
-{
-    font: 500 1rem/1 "orbitron";
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  header nav a {
+    font: 500 0.8rem/1 "orbitron";
     letter-spacing: 1px;
     margin-right: 30px;
-}
-
-/* main */
-main 
-{
-    margin-bottom: 30px;
-}
-
-main h1 
-{
+  }
+  
+  /* main */
+  main {
+    margin-bottom: 40px;
+  }
+  main h1 {
     font-size: 2rem;
     margin-bottom: 10px;
-}
-main figure 
-{
+  }
+  main figure {
     width: 300px;
     height: 300px;
-    margin: 0 auto 50px auto;
     border-radius: 150px;
+    margin-bottom: 30px;
     overflow: hidden;
-}
-main p 
-{
+    margin: 0px auto;
+    margin-bottom: 50px;
+    background-color: hotpink;
+  }
+  main figure img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+  }
+  main figure img:hover {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  main p {
     line-height: 1.5;
-    margin: 0 auto 30px auto;
+    margin-bottom: 30px;
     text-align: justify;
-}
-
-main a
-{
-    background-color:black;
+  }
+  main a {
+    background-color: black;
     font-weight: bold;
     font-size: 0.7rem;
-    color:white;
+    color: white;
     width: 100px;
     height: 30px;
-    display: inline-block; /* 각 요소의 특징을 강제 변경 처리 block, inline, inline-block*/
+    display: inline-block;
     text-align: center;
     line-height: 30px;
     border-radius: 15px;
-}
-
-/* footer */
-footer
-{
+    transition: 0.5s;
+  }
+  main a:hover {
+    width: 150px;
+    background-color: hotpink;
+  }
+  
+  /* footer */
+  footer {
     border-top: 1px solid black;
-}
-
-footer ul 
-{
-    font-size: 1.5rem;
+    padding: 20px 0px;
+  }
+  footer ul {
+    font-size: 1.2rem;
     text-align: right;
-}
-
-footer ul li 
-{
+  }
+  footer ul li {
     display: inline-block;
-    margin: 0 1px; /* 좌우 간격 */
-
-}
-
-footer p
-{
+    transition: 0.5s;
+  }
+  footer ul li:hover {
+    transform: rotate(360deg) scale(0);
+    opacity: 0;
+  }
+  footer p {
+    font-size: 0.8rem;
     text-align: right;
-    font-size: 1rem;
-}
+  }
+
+/*
+요소명:hover (가상선택자)
+- 요소에 마우스를 올렸을때 변경되는 구문을 설정
+
+투명도 설정
+opacity: 0.5; (반투명 처리 0~1)
+
+전환효과 설정
+- transition: 0.5s; (0.5초 동안 변경구문에 대한 전환모션 적용)
+- 주의점 : hover문이 아닌 원본 요소에 적용
+
+요소 변형 효과
+transform: translateX(10px); 10px만큼 가로로 이동
+transform: translateY(10px); 10px만큼 세로로 이동
+transform: rotate(45deg); 45도 만큼 회전
+transform: scale(1.5); 1.5배 만큼 확대
+transform: skewX(35deg); 35도 만큼 가로로 비틀기
+
+주의: 요소변형은 block이나 inline-block요소에만 적용됨
+*/
 
 /* 
 정렬 기능 (text-align) 
